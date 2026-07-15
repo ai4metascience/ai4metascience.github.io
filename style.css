@@ -11,7 +11,7 @@
   --bg: #ffffff;
   --hero-grad-a: #16324f;
   --hero-grad-b: #2d6ba3;
-  --max-width: 900px;
+  --max-width: 1050px;
   --display-font: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
 }
 
@@ -209,7 +209,7 @@ table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
 
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   margin: 1.5rem 0 1rem;
 }
