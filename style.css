@@ -147,7 +147,7 @@ a:hover { text-decoration: underline; }
   padding: 1.1rem 1.3rem;
   background: #fbfcfe;
 }
-.track-card h3 { margin-top: 0; color: var(--accent); }
+.track-card h3 { margin-top: 0; color: var(--accent); font-weight: normal; font-style: italic; font-family: var(--display-font); font-size: 1.35rem; }
 .track-card ul { padding-left: 1.2rem; margin: 0.5rem 0; }
 .track-card li { margin: 0.35rem 0; }
 
