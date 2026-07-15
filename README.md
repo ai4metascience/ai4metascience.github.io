@@ -7,9 +7,15 @@ Live at: https://ai4metascience.github.io/ (once deployed — see below)
 
 ## Files
 
-- `index.html` — the whole site (all sections: about, CFP, dates, speakers, schedule, organizers)
+- `index.html` — welcome page (about, dates, speakers, schedule, organizers, contact)
+- `cfp.html` — full call for papers (scope, tracks, submission guidelines, dates, FAQ)
 - `style.css` — all styling
 - `.nojekyll` — tells GitHub Pages to serve files as-is (no Jekyll build)
+
+Candidate speaker photos live OUTSIDE this repo in `../speaker_photos/<name>/`
+(with `sources.md` per person). Once chosen, copy the photo into `assets/` here,
+compress it, and swap the speaker's `<div class="avatar">XX</div>` for
+`<img class="avatar" src="assets/name.jpg" alt="Name">`.
 
 ## Editing
 
