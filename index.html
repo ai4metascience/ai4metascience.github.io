@@ -17,7 +17,7 @@
     "name": "AI for Meta-Science: Scaling and Organizing Science in the Age of AI Scientists",
     "description": "A NeurIPS 2026 workshop on AI in peer review, scientific evaluation, and the governance of AI-accelerated science. Technical and position paper tracks; submission deadline August 29, 2026 (AoE).",
     "startDate": "2026-12-11",
-    "endDate": "2026-12-12",
+    "endDate": "2026-12-13",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -155,17 +155,13 @@
   <h2>Important Dates <span class="muted-inline">(Anywhere on Earth)</span></h2>
   <table class="dates-table">
     <tbody>
-      <tr><td>Submissions open</td><td>July 27, 2026</td></tr>
-      <tr><td>Paper submission deadline</td><td>August 29, 2026, 23:59 AoE (UTC-12)</td></tr>
-      <tr><td>Accept/reject notification</td><td>September 29, 2026</td></tr>
-      <tr><td>Camera-ready deadline</td><td>November 2026 (exact date TBA)</td></tr>
-      <tr><td>Workshop</td><td>December 2026 (exact day TBA) at NeurIPS 2026, Paris</td></tr>
+      <tr><td>Submissions open</td><td>July 27, 2026</td><td class="cd"></td></tr>
+      <tr><td>Paper submission deadline</td><td>August 29, 2026</td><td class="cd"><span class="countdown" data-deadline="2026-08-30T11:59:59Z"></span></td></tr>
+      <tr><td>Accept/reject notification</td><td>September 29, 2026</td><td class="cd"><span class="countdown" data-deadline="2026-09-30T11:59:59Z"></span></td></tr>
+      <tr><td>Camera-ready deadline</td><td>November 2026 (exact date TBA)</td><td class="cd"></td></tr>
+      <tr><td>Workshop</td><td>December 2026 (exact day TBA) at NeurIPS 2026, Paris</td><td class="cd"></td></tr>
     </tbody>
   </table>
-  <div class="countdown-wrap">
-    <p class="countdown-label">Time remaining until the paper submission deadline:</p>
-    <div class="countdown" id="countdown" data-deadline="2026-08-30T11:59:59Z"></div>
-  </div>
 </section>
 
 <section id="submissions" class="section">
@@ -263,22 +259,20 @@
 
 <script>
 (function () {
-  var box = document.getElementById('countdown');
-  if (!box) return;
-  var deadline = Date.parse(box.getAttribute('data-deadline'));
-  ['Days', 'Hours', 'Minutes', 'Seconds'].forEach(function (label) {
-    var u = document.createElement('div');
-    u.className = 'cd-unit';
-    u.innerHTML = '<span class="cd-num">00</span><span class="cd-label">' + label + '</span>';
-    box.appendChild(u);
-  });
-  var nums = box.querySelectorAll('.cd-num');
+  var spans = document.querySelectorAll('.countdown[data-deadline]');
+  if (!spans.length) return;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
   function tick() {
-    var s = Math.max(0, Math.floor((deadline - Date.now()) / 1000));
-    var vals = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60];
-    for (var i = 0; i < 4; i++) nums[i].textContent = (vals[i] < 10 ? '0' : '') + vals[i];
-    if (s > 0) { setTimeout(tick, 1000); }
-    else { box.previousElementSibling.textContent = 'The paper submission deadline has passed.'; }
+    var now = Date.now();
+    Array.prototype.forEach.call(spans, function (el) {
+      var s = Math.floor((Date.parse(el.getAttribute('data-deadline')) - now) / 1000);
+      if (s <= 0) { el.textContent = ''; return; }
+      var w = Math.floor(s / 604800);
+      var d = Math.floor(s % 604800 / 86400);
+      el.textContent = w + ' weeks ' + d + ' days ' +
+        pad(Math.floor(s % 86400 / 3600)) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60);
+    });
+    setTimeout(tick, 1000);
   }
   tick();
 })();
