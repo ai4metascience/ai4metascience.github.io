@@ -286,3 +286,32 @@ img.avatar {
 /* ---------- Page end ---------- */
 
 main { padding-bottom: 3.5rem; }
+
+/* ---------- Deadline countdown ---------- */
+.countdown-wrap { margin: 1.1rem 0 0.25rem; }
+.countdown-label { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.95rem; }
+.countdown { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.cd-unit {
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem 0.35rem;
+  min-width: 76px;
+  text-align: center;
+}
+.cd-num {
+  display: block;
+  font-family: var(--display-font);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.cd-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
