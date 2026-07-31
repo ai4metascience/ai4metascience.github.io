@@ -53,12 +53,15 @@ a:hover { text-decoration: underline; }
 
 .hero-inner { position: relative; max-width: var(--max-width); margin: 0 auto; }
 
-.hero-logo {
-  width: 120px;
-  height: auto;
-  margin: 0 auto 1.1rem;
-  display: block;
+.hero-brand {
+  position: absolute;
+  top: 0.9rem;
+  left: 1.1rem;
+  z-index: 1;
 }
+.hero-brand img { width: 64px; height: auto; display: block; opacity: 0.95; }
+.hero-brand:hover img { opacity: 1; }
+@media (max-width: 720px) { .hero-brand img { width: 48px; } }
 
 .hero-kicker {
   text-transform: uppercase;
