@@ -224,6 +224,12 @@ table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
   margin: 1.5rem 0 1rem;
 }
 
+/* Speakers grid on the homepage: one row of 6 on desktop */
+#speakers .people-grid { grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+@media (max-width: 940px) {
+  #speakers .people-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+
 .person {
   text-align: center;
   padding: 1rem 0.6rem;
