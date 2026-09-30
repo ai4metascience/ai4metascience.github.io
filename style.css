@@ -97,6 +97,8 @@ a:hover { text-decoration: underline; }
 .btn:hover { text-decoration: none; }
 .btn-ghost { border: 1.5px solid rgba(255,255,255,0.65); color: #fff; }
 .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+.btn-primary { background: var(--accent); color: #fff; border: 1.5px solid var(--accent); }
+.btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
 
 
 /* ---------- Sections ---------- */
