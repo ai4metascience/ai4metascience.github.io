@@ -100,6 +100,20 @@ a:hover { text-decoration: underline; }
 .btn-primary { background: var(--accent); color: #fff; border: 1.5px solid var(--accent); }
 .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
 
+/* ---------- Sponsors ---------- */
+.sponsor-tier { margin: 1.2rem 0 1.6rem; }
+.sponsor-tier h3 {
+  font-family: var(--display-font); font-size: 1.15rem; font-weight: normal;
+  font-style: italic; color: var(--accent); margin: 0 0 0.6rem;
+}
+.sponsor-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.sponsor {
+  display: inline-block; padding: 0.7rem 1.4rem; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--accent-bg); font-weight: 600; font-size: 1.05rem;
+}
+.sponsor:hover { border-color: var(--accent-light); text-decoration: none; }
+.sponsor .sponsor-note { display: block; font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+
 
 /* ---------- Sections ---------- */
 
