@@ -101,18 +101,30 @@ a:hover { text-decoration: underline; }
 .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
 
 /* ---------- Sponsors ---------- */
-.sponsor-tier { margin: 1.2rem 0 1.6rem; }
+.sponsor-tier { margin: 1.4rem 0 2rem; }
 .sponsor-tier h3 {
-  font-family: var(--display-font); font-size: 1.15rem; font-weight: normal;
-  font-style: italic; color: var(--accent); margin: 0 0 0.6rem;
+  font-family: var(--display-font); font-size: 1.2rem; font-weight: normal;
+  font-style: italic; color: var(--accent); margin: 0 0 0.9rem;
 }
-.sponsor-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-.sponsor {
-  display: inline-block; padding: 0.7rem 1.4rem; border: 1px solid var(--border);
-  border-radius: 8px; background: var(--accent-bg); font-weight: 600; font-size: 1.05rem;
+.sponsor-grid { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.sponsor-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 230px; padding: 1.1rem; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); transition: transform .15s ease, box-shadow .15s ease;
 }
-.sponsor:hover { border-color: var(--accent-light); text-decoration: none; }
-.sponsor .sponsor-note { display: block; font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+.sponsor-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(31,78,121,.13); text-decoration: none; }
+.sponsor-logo {
+  height: 96px; width: 100%; display: flex; align-items: center; justify-content: center;
+  margin-bottom: .7rem; border-radius: 8px;
+}
+.sponsor-logo img { max-height: 84px; max-width: 170px; }
+/* the Stockholm AI mark is supplied for dark backgrounds, so it gets a dark tile */
+.sponsor-logo.on-dark { background: var(--hero-grad-a); padding: .5rem; }
+.sponsor-wordmark {
+  font-family: var(--display-font); font-size: 1.45rem; color: var(--accent); text-align: center;
+}
+.sponsor-name { font-weight: 600; color: var(--text); }
+.sponsor-note { display: block; font-weight: 400; font-size: .86rem; color: var(--muted); text-align: center; }
 
 
 /* ---------- Sections ---------- */
