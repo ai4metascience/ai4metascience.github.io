@@ -117,7 +117,7 @@ a:hover { text-decoration: underline; }
   height: 96px; width: 100%; display: flex; align-items: center; justify-content: center;
   margin-bottom: .7rem; border-radius: 8px;
 }
-.sponsor-logo img { max-height: 84px; max-width: 170px; }
+.sponsor-logo img { max-height: 84px; max-width: 180px; border-radius: 6px; }
 /* the Stockholm AI mark is supplied for dark backgrounds, so it gets a dark tile */
 .sponsor-logo.on-dark { background: var(--hero-grad-a); padding: .5rem; }
 .sponsor-wordmark {
