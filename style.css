@@ -33,22 +33,16 @@ a:hover { text-decoration: underline; }
 
 .hero {
   position: relative;
-  background: linear-gradient(135deg, var(--hero-grad-a), var(--hero-grad-b));
+  background: url("assets/hero-bg.svg") center / cover no-repeat,
+              linear-gradient(135deg, var(--hero-grad-a), var(--hero-grad-b));
   color: #fff;
   text-align: center;
   padding: 3.5rem 1.25rem 3rem;
   overflow: hidden;
 }
-
-/* subtle "citation network" motif */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.13'%3E%3Cpath d='M60 120L200 60M200 60L340 140M340 140L480 80M60 120L180 260M180 260L340 140M180 260L120 420M120 420L300 380M300 380L340 140M300 380L460 460M460 460L480 80M480 80L520 300M520 300L460 460M520 300L300 380'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.20'%3E%3Ccircle cx='60' cy='120' r='5'/%3E%3Ccircle cx='200' cy='60' r='7'/%3E%3Ccircle cx='340' cy='140' r='9'/%3E%3Ccircle cx='480' cy='80' r='5'/%3E%3Ccircle cx='180' cy='260' r='6'/%3E%3Ccircle cx='120' cy='420' r='7'/%3E%3Ccircle cx='300' cy='380' r='9'/%3E%3Ccircle cx='460' cy='460' r='5'/%3E%3Ccircle cx='520' cy='300' r='6'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 560px 560px;
-  pointer-events: none;
+/* phones: the wide image would crop to its empty centre, so use a portrait version */
+@media (max-width: 720px) {
+  .hero { background-image: url("assets/hero-bg-portrait.svg"), linear-gradient(135deg, var(--hero-grad-a), var(--hero-grad-b)); }
 }
 
 .hero-inner { position: relative; max-width: var(--max-width); margin: 0 auto; }
@@ -99,6 +93,14 @@ a:hover { text-decoration: underline; }
 .btn-ghost:hover { background: rgba(255,255,255,0.14); }
 .btn-primary { background: var(--accent); color: #fff; border: 1.5px solid var(--accent); }
 .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
+
+/* phones: compact nav pills so the header doesn't fill the screen */
+@media (max-width: 720px) {
+  .hero { padding: 3rem 0.9rem 1.6rem; }
+  .hero-kicker { margin-bottom: 1.1rem; }
+  .hero-buttons { gap: 0.4rem; }
+  .hero-buttons .btn { padding: 0.32rem 0.75rem; font-size: 0.86rem; border-width: 1px; border-radius: 999px; }
+}
 
 /* ---------- Sponsors ---------- */
 .sponsor-tier { margin: 1.4rem 0 2rem; }
@@ -336,4 +338,27 @@ main { padding-bottom: 3.5rem; }
   width: 30%;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Hackathon page ---------- */
+.lead { font-size: 1.12rem; }
+.prize-box {
+  background: var(--accent-bg);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 0.9rem 1.25rem;
+  margin: 1.4rem 0;
+}
+.prize-box p { margin: 0.3rem 0 0; }
+.cta-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin: 1.4rem 0 0.4rem; }
+.btn-outline { border: 1.5px solid var(--accent); color: var(--accent); }
+.btn-outline:hover { background: var(--accent-bg); }
+.tracks-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .tracks-3 { grid-template-columns: 1fr; } }
+.tracks-3 .track-card h3 { font-size: 1.2rem; }
+.task-card p { margin: 0.4rem 0; font-size: 0.95rem; }
+.task-card ul { font-size: 0.95rem; }
+.task-card .task-label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent); margin-top: 0.9rem;
 }
