@@ -103,30 +103,39 @@ a:hover { text-decoration: underline; }
 }
 
 /* ---------- Sponsors ---------- */
-.sponsor-tier { margin: 1.4rem 0 2rem; }
-.sponsor-tier h3 {
-  font-family: var(--display-font); font-size: 1.2rem; font-weight: normal;
-  font-style: italic; color: var(--accent); margin: 0 0 0.9rem;
+/* a quiet logo strip: centred, optically balanced, hairline dividers, no tiles */
+.sponsor-tier { margin: 2.4rem 0 2.8rem; }
+.section .sponsor-tier h3 {
+  display: flex; align-items: center; gap: 1.1rem;
+  margin: 0 0 1.6rem; font-size: .74rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
 }
-.sponsor-grid { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.section .sponsor-tier h3::before, .section .sponsor-tier h3::after { content: ""; flex: 1; border-top: 1px solid var(--border); }
+.sponsor-grid { display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; row-gap: 2rem; margin: 1.8rem 0; }
 .sponsor-card {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  width: 230px; padding: 1.1rem; border: 1px solid var(--border); border-radius: 10px;
-  background: var(--bg); transition: transform .15s ease, box-shadow .15s ease;
+  padding: 0 2.6rem; transition: opacity .2s ease;
 }
-.sponsor-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(31,78,121,.13); text-decoration: none; }
-.sponsor-logo {
-  height: 96px; width: 100%; display: flex; align-items: center; justify-content: center;
-  margin-bottom: .7rem; border-radius: 8px;
+.sponsor-card + .sponsor-card { border-left: 1px solid var(--border); }
+.sponsor-card:hover { opacity: .65; text-decoration: none; }
+.sponsor-logo { height: 84px; display: flex; align-items: center; }
+/* per-logo heights (set inline as --h) balance wide wordmarks against stacked marks */
+.sponsor-logo img { height: var(--h, 48px); width: auto; max-width: 220px; }
+/* the sponsors page gives logos more room than the hackathon organizer strip */
+.sponsor-tier .sponsor-logo { height: 124px; }
+.sponsor-tier .sponsor-logo img { max-width: 300px; }
+.sponsor-note {
+  display: block; margin-top: .7rem; font-size: .7rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center;
 }
-.sponsor-logo img { max-height: 84px; max-width: 180px; border-radius: 6px; }
-/* the Stockholm AI mark is supplied for dark backgrounds, so it gets a dark tile */
-.sponsor-logo.on-dark { background: var(--hero-grad-a); padding: .5rem; }
-.sponsor-wordmark {
-  font-family: var(--display-font); font-size: 1.45rem; color: var(--accent); text-align: center;
+@media (max-width: 600px) {
+  .sponsor-grid { flex-direction: column; align-items: center; }
+  .sponsor-card + .sponsor-card { border-left: 0; }
+  /* a short, faint rule between stacked logos */
+  .sponsor-card + .sponsor-card::before {
+    content: ""; width: 56px; border-top: 1px solid var(--border); margin-bottom: 2rem;
+  }
 }
-.sponsor-name { font-weight: 600; color: var(--text); }
-.sponsor-note { display: block; font-weight: 400; font-size: .86rem; color: var(--muted); text-align: center; }
 
 
 /* ---------- Sections ---------- */
